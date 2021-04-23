@@ -13,12 +13,15 @@
                         
                         @foreach ($result as $dato)
                             @if ($dato["nombre"] == "Dolar Oficial")
-                                {{"Cotización del Dólar Oficial para la venta: " . $dato["venta"]}}
+                                @php $dato = $dato["venta"] @endphp
+                                {{"Cotización del Dólar Oficial para la venta: " . $dato}} - {{"(Sacado de Api DolarSi)"}}
                             @endif
                         @endforeach
 
                     @endif
                 </p>
+
+                {{"Valor del Pozo Actual: " . $jackpot_value}} - {{"Traido de la DB"}}
         
                 <!-- Form para prueba --> <!-- Form para prueba --> <!-- Form para prueba --> <!-- Form para prueba --> 
         
@@ -38,7 +41,8 @@
                                 </div>
                 
                             </div>
-                
+    
+                            <input type="number" value="" hidden>
                 
                             <div class="form-group">
                                 <div class="col mb-5 mr-1" style="text-align: center">
