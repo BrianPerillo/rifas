@@ -17,7 +17,7 @@ use App\Http\Controllers\RaffleController;
 
 Route::get('/', [MainController::class, 'show'])->name('dashboard');
 
-Route::post('/buy_raffles', [RaffleController::class, 'create'])->name('raffles.buy');
+Route::post('/buy_raffles', [RaffleController::class, 'show'])->name('raffles.buy');
 
 // Route::get('/', function () {
 //     return view('welcome');

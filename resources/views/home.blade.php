@@ -22,7 +22,7 @@
                 </p>
 
                 {{"Valor del Pozo Actual: " . $jackpot_value}} - {{"Traido de la DB"}}
-        
+                <p>Precio de las rifas: {{$raffles_price}}</p>
                 <!-- Form para prueba --> <!-- Form para prueba --> <!-- Form para prueba --> <!-- Form para prueba --> 
         
                 <div class="d-flex justify-content-center"  style="margin:auto;">
@@ -37,11 +37,17 @@
                             <div class="form-group">
                 
                                 <div class="col mb-5 ml-1 mr-1" style="text-align: center">
-                                    <input class="form-control" name="raffles" type="number" min="1" value="" placeholder="1">
+                                    <input class="form-control" name="raffles_quantity" type="number" min="1" value="1">
                                 </div>
                 
                             </div>
-    
+
+                            @if (isset($total_price))
+                                
+                                {{"total_price= "}} {{$total_price}}
+                                
+                            @endif
+
                             <input type="number" value="" hidden>
                 
                             <div class="form-group">
