@@ -18,8 +18,8 @@ class CreateRafflesTable extends Migration
             $table->integer('number');
             $table->unsignedBigInteger('price');
             $table->foreign('price')->references('id')->on('prices')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('purchase_id');
+            $table->foreign('purchase_id')->references('id')->on('purchases')->onDelete('cascade');
             $table->timestamps();
         });
     }
