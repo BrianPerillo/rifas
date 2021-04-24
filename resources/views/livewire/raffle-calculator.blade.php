@@ -6,7 +6,7 @@
         <div class="form-group">
 
             <div class="col mb-5 ml-1 mr-1" style="text-align: center">
-                <input wire:model="quantity" class="form-control" name="raffles_quantity" type="number" min="1" value="1" placeholder="">
+                <input wire:model="quantity" class="form-control" name="raffles_quantity" type="number" value="1" min="1" step="1" onkeydown="return false">
             </div>
 
         </div>
@@ -18,10 +18,10 @@
         </div> --}}
 
         <p>
-            @if(is_numeric($quantity))
+            @if(is_numeric($quantity) && $quantity>0)
                     Precio por {{$quantity}} rifas: {{$final_price}}
             @else 
-                Precio por 0 rifas: 0
+                Debes ingresar un número de rifas válido
             @endif
 
         </p>
