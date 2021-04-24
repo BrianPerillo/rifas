@@ -18,6 +18,7 @@ class CreateDrawsTable extends Migration
             $table->integer('total_users');
             $table->integer('raffles_quantity');
             $table->float('jackpot_value', 6, 2);
+            $table->float('dollar', 4 , 4);
             $table->timestamps();
         });
     }
