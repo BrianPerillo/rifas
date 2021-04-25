@@ -6,7 +6,7 @@ use Livewire\Component;
 
 use Illuminate\Support\Facades\Http;
 
-use App\Models\Jackpot;
+use App\Models\Draw;
 
 class RaffleCalculator extends Component
 {
@@ -17,9 +17,9 @@ class RaffleCalculator extends Component
     public function render(){
         
         //Consulto el pozo total
-        $jackpot = Jackpot::get()->first();
+        $draw = Draw::get()->first();
 
-        $jackpot_value = $jackpot->value;
+        $jackpot_value = $draw->jackpot_value;
 
         //Calculo precio de las rifas (1% del jackpot/pozo acumulado) 
         $raffles_price = $jackpot_value*0.01;
@@ -27,7 +27,7 @@ class RaffleCalculator extends Component
         //Calculo precio por el total de las rifas solicitadas 
 
         if(is_numeric($this->quantity)){
-            $this->final_price = $this->quantity*$raffles_price;
+            $this->final_price = round(($this->quantity*$raffles_price), 2);
         }
         else{
             $this->final_price = null;

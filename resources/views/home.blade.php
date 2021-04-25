@@ -11,6 +11,22 @@
 
         <div class="container">
 
+            @if (isset($user_role))
+
+                <p>Tipo de Usuario: {{"$user_role"}}</p>
+                
+                <p>Lista de Compradores:
+
+                    @foreach ($compradores as $comprador)
+                        {{$comprador->name . ", " }}
+                    @endforeach
+
+                </p>
+
+            @endif
+
+            </br>
+
             <div>
                 <livewire:raffles-info/>
             </div>
