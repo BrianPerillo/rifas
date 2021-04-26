@@ -31,7 +31,7 @@
                 <livewire:raffles-info/>
             </div>
 
-            <div style="width:30%;margin:auto">
+            <div id="compra" style="width:50%;margin:auto">
 
                 <livewire:raffle-calculator />
 
@@ -40,6 +40,9 @@
         </div>
 
     </div>
+    
+{{-- <!-- TAGS SCRIPT -->
+<script src="{{asset('js/tags.js')}}"></script> --}}
 
 </x-app-layout>
 
